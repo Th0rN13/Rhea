@@ -1,0 +1,991 @@
+@mixin font($font_name, $file_name, $weight, $style) 
+	@font-face 
+		font-family: $font_name
+		font-display: swap
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+		font-weight: #{$weight}
+		font-style: #{$style}
+	
+@import "fonts"
+@import "slick"
+
+
+*
+  padding: 0
+  margin: 0
+  border: 0
+	  -moz-box-sizing: border-box
+	  -webkit-box-sizing: border-box
+	  box-sizing: border-box
+	  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+  &:before,
+  &:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+*:focus, *:active
+  outline: none
+
+a
+  &:focus, &:active
+    outline: none
+
+nav, footer, header, aside
+  display: block
+
+html
+  width: 100%
+  height: 100%
+  font-size: 100%
+  line-height: 1
+  font-size: 14px
+  -ms-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  width: 100%
+  height: 100%
+  font-size: 100%
+  line-height: 1
+  font-size: 14px
+  -ms-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  overflow-x: hidden
+
+input, button, textarea
+  font-family: inherit
+
+input::-ms-clear
+  display: none
+
+button
+  cursor: pointer
+
+  &::-moz-focus-inner
+    padding: 0
+    border: 0
+
+a
+  text-decoration: none
+
+  &:visited, &:hover
+    text-decoration: none
+
+ul li
+  list-style: none
+
+img
+  vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: 400
+
+
+
+
+body
+  font-family: NunitoSans
+
+h1, h2
+  color: #091e40
+
+a, p
+  font-family: Nunito
+  text-decoration: none
+
+button, button a
+  background-color: #3984f3
+  border: none
+  outline: none
+  cursor: pointer
+  font-size: 14px
+  font-weight: 400
+  color: #fff
+
+  a
+    background-color: #3984f3
+    border: none
+    outline: none
+    cursor: pointer
+
+    font-family: Nunito
+    font-size: 14px
+    color: #fff
+
+.section_tagline
+  text-align: center
+  font-size: 35px
+  font-weight: 700
+  color: #091e40
+
+  &::after
+    content: ""
+    display: block
+    margin: 23px auto
+    width: 60px
+    height: 4px
+    background-color: #3984f3
+
+.section_subtext
+  text-align: center
+  line-height: 2
+  color: #81858e
+
+
+
+.header_top
+  display: flex
+
+.header_logo
+  margin-top: 25px
+  margin-left: 70px
+
+  img
+    max-width: 140px
+
+.head_nav
+  margin: 35px 0 0 380px
+
+.head_nav_ul
+  padding-left: 0
+  list-style: none
+
+.nav_item
+  display: inline
+  margin-right: 70px
+  font-size: 18px
+
+.nav_item_li_active
+  font-size: 18px
+  color: #509ef4
+
+.nav_item_li
+  color: #bab8b8
+
+.nav_item_li_last
+  padding: 9px 33px 12px 33px
+
+  color: #509ef4
+  border: 3px solid #3984f3
+
+.header_content
+  display: flex
+  justify-content: space-between
+
+.tree
+  max-width: 240px
+  max-height: 395px
+  margin: 220px 0px 0px -8px
+
+.header_content_text
+  max-height: 140px
+  margin: 70px 0px 60px -265px
+
+.tagline
+  font-weight: 800
+  font-size: 60px
+
+.tagline_subtext
+  margin: 50px 0 0 0
+  line-height: 1.5
+  max-height: 80px
+
+  font-family: NunitoSans
+  font-size: 18px
+  font-weight: 400
+  color: #81858e
+
+.btn_sign
+  margin: 400px 0 0 -735px
+  padding-bottom: 5px
+  width: 150px
+  height: 45px
+
+.head_main_img
+  margin: 29px -8px 0 0px
+  width: 610px
+  height: 535px
+
+
+
+.places
+  margin: 20px 0 160px 0
+
+.places_container
+  display: flex
+
+.slick-slide.slick-current.slick-active.slick-center
+  margin: 6px 20px 0 0
+  transition: .5s
+
+.slick-slide.slick-current.slick-center 
+  margin: 6px 20px 0 0
+  transition: .5s
+
+.slick-slide.slick-cloned
+  transition: .5s
+
+.slick-slide 
+  width: 235px
+  height: 385px
+  position: relative
+  margin: 45px 20px 0 0
+  cursor: pointer
+  overflow: hidden
+  transition: .5s
+
+.slider_places
+  margin-top: 63px
+  width: 710px
+  height: 500px
+  position: relative
+  overflow: hidden
+
+  .slick-track
+    display: flex
+    margin: 0 0 0 -27px
+
+  .slider_item
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    transition: .5s
+
+    &:after
+      content: ""
+      position: absolute
+      display: block
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      background: linear-gradient(0deg, rgba(9,46,64,1) -10%, rgba(9,30,64, 0) 65%) 
+
+    .item_img
+      width: 185%
+      height: 103%
+      padding: 0 0 0 0
+      transform: translateX(-182px)
+
+    .item_img.mald
+      padding: 0 0 0 0
+
+      width: 135%;
+      height: 200%;
+
+      transform: translate(1px, -70px)
+
+    .places-cost
+      position: relative
+      margin: -327px 0 0 0
+      width: 68px
+      height: 28px
+      font-size: 17px
+      color: #fff
+      background: #3984f3
+
+    .places-cost.mald
+      margin: -657px 0 0 0
+
+    .places-cost p
+      padding: 6px 0 0 16px
+
+  .slider_item_tagline
+    position: relative
+    margin: 254px 0 0 15px
+    color: #fff
+    font-size: 15px
+    font-weight: 200
+    z-index: 2
+
+  .slider_item_rating
+    display: flex
+    position: fixed
+    margin: 35px 0 0 183px
+    font-size: 0
+    transition: .3s
+    opacity: 0
+    z-index: 3
+
+    img
+      width: 14px
+      margin-right: 6px
+
+  .slider_item_date
+    position: fixed
+    margin: 37px 0 0 159px
+    font-size: 16px
+    color: #a0a0a0
+    transition: .3s
+    opacity: 0
+    z-index: 3
+
+  .slider_item.slick-center
+    margin-bottom: 20px
+
+    .places_cost
+      margin: -327px 0 0 0
+
+      p
+        padding: 4px 0 0 16px
+
+    .slider_tagline
+      margin: 254px 0 0 15px
+
+    .slider_item_rating
+      margin: 35px 0 0 183px
+      opacity: 1
+
+    .slider_item_date
+      margin: 37px 0 0 159px
+      opacity: 1
+
+  .slick-arrow
+    position: absolute
+    width: 45px
+    height: 32px
+    font-size: 0
+    border: none
+    outline: none
+
+    &.slick-prev
+      top: 430px
+      left: 142px
+      background: url('/img/Places/arrow.jpg') 0 0 / 100% no-repeat
+
+    &.slick-next
+      bottom: 39px
+      right: 440px
+      background: url('/img/Places/arrow2.jpg') 0 0 / 100% no-repeat
+
+
+.places_info
+  margin: 125px 0 0 95px
+
+.places_tagline
+  font-size: 28px
+  font-weight: 700
+  color: #091e40
+
+  &:after
+    display: block
+    content: ""
+    margin: 26px 0 0 0
+    width: 55px
+    height: 4px
+    background-color: #3984f3
+
+.places_text
+  margin: 35px 0 0 0
+  max-width: 452px
+  font-size: 15px
+  font-weight: 500
+  line-height: 2
+  color: #81858e
+
+.btn_places
+  margin-top: 35px
+  padding-bottom: 4px
+  width: 140px
+  height: 40px
+
+
+
+.videos
+  margin-bottom: 250px
+
+.player
+  display: flex
+
+.video_container
+  position: relative
+  margin: 80px 0 0 17px
+  width: 845px
+  height: 475px
+  overflow: hidden
+
+#video_player
+  position: relative
+  margin: 0 0 0 0
+  width: 100%
+
+#play-pause
+  position: absolute
+  margin: 210px 0 0 -445px
+  width: 68px
+  height: 68px
+  filter: invert(1)
+  opacity: 0
+  transition: .1s
+  z-index: 3
+
+.video_container:hover #play-pause
+  opacity: 1
+
+.play
+  background: url("../../img/Videos/play-circle.svg") no-repeat
+
+.pause
+  background: url("../../img/Videos/pause-circle.svg") no-repeat
+
+.volume
+  position: absolute
+  top: 435px
+  right: 20px
+  opacity: 0
+  transition: .1s
+  z-index: 3
+
+  input[type=range]
+    width: 120px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+    &::-webkit-slider-runnable-track
+      height: 7px
+      border-radius: 70%
+      cursor: pointer
+
+    &::-webkit-slider-thumb
+      margin-top: -4px
+      -webkit-appearance: none
+      width: 15px
+      height: 15px
+      background: #3984f3
+      border-radius: 5px
+      cursor: pointer
+
+.video_container:hover .volume
+  opacity: 1
+
+.video_info
+  position: absolute
+  margin: -326px 0 0 0
+  width: 100%
+  height: 321px
+  /* background: linear-gradient(119deg, #4094ff 0%, #2eb0e8 100%)*/
+
+p
+  position: relative
+  z-index: 2
+
+#video_name
+  margin: 240px 0 0 36px
+  font-size: 23px
+  font-weight: 500
+  color: #fff
+
+#video_duration
+  margin: 12px 0 0 36px
+  font-size: 20px
+  font-weight: 300
+  color: #c4cac8
+
+
+.video_sidebar
+  display: inline
+  float: right
+  margin: 80px 0 0 15px
+  width: 455px
+  height: 475px
+  overflow: scroll
+  overflow-x: hidden
+
+  &::-webkit-scrollbar
+    position: relative
+    margin-left: 10px
+    width: 5px
+    height: 475px
+
+  &::-webkit-scrollbar-thumb
+    background-color: #d9d9d9
+    border-radius: 9em
+    transition: .2s
+
+    &:hover
+      background-color: #cccccc
+
+
+.sidebar_item
+  margin: 0 0 4px 0
+  height: 140px
+  width: 440px
+  transition: .2s
+  cursor: pointer
+  overflow: hidden
+
+  &:hover, &:first-child
+    background: #f0f0f0
+
+  img
+    margin: 15px 15px 11px 14px
+    width: 190px
+    height: 110px
+    filter: contrast(120%) saturate(90%)
+
+  .tagline
+    display: block
+    margin: -115px 0 0 212px
+    height: 100%
+    font-size: 22px
+    font-weight: 700
+    color: #091e40
+
+    .duration
+      margin: 5px 0 0 0
+      font-size: 17px
+      font-weight: 500
+      color: #526179
+
+
+.categories
+  margin-bottom: 190px
+  width: 100%
+
+
+.slider_categories
+  margin: 40px 0 0 0
+  width: 100%
+  height: 460px
+  overflow: hidden
+
+  .slick-track
+    display: flex
+    height: 360px
+
+  .slider_item
+    width: 290px
+    height: 300px
+    position: relative
+    margin: 45px 20px 0 0
+    cursor: pointer
+    transition: .5s
+    overflow: hidden
+
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      /*background: linear-gradient(119deg, #4094ff 0%, #2eb0e8 100%)*/
+
+    img
+      width: 100%
+      height: 105%
+      object-fit: cover
+      transform: translate(0px, -15px)
+
+  .slider_item_tagline
+    position: relative
+    margin: -55px 23px
+    color: #fff
+    font-size: 15px
+    font-weight: 200
+    z-index: 2
+
+  .slider_item.slick-center
+    margin: 10px 20px 0 0
+    box-shadow: 0px 30px 60px -40px
+
+  .slick-arrow
+    position: absolute
+    top: 85%
+    font-size: 0
+    width: 40px
+    height: 40px
+    background: none
+    border: none
+    outline: none
+
+    &.slick-prev
+      left: 610px
+      background: url('../img/categories/arrow.jpg') 0 0 / 100% no-repeat
+
+    &.slick-next
+      right: 610px
+      background: url('../img/categories/arrow2.jpg') 0 0 / 100% no-repeat
+
+
+.travellers
+  margin-bottom: 180px
+
+.slider_travellers
+  width: 100%
+  height: 460px
+  overflow: hidden
+
+  .slick-track
+    display: flex
+    overflow: hidden
+    height: 500px
+
+  .slider_item
+    position: relative
+    margin: 0 auto
+    width: 600px
+    height: 300px
+
+  .slider_item_review
+    text-align: center
+    margin: 10px 0 0 -45px
+    width: 680px
+    height: 150px
+    font-size: 17px
+    line-height: 2
+    color: #091e40
+
+  .slider_item_image
+    margin: auto
+    width: 100px
+    height: 100px
+    border-radius: 50px
+    overflow: hidden
+
+    img
+      transform: translate(0px, -10px)
+      width: 100%
+      height: 175%
+      border-radius: 50px
+      object-fit: cover
+
+  .slider_item_tagline
+    text-align: center
+    margin: 30px 0 0 0
+    color: #2b323a
+    font-size: 20px
+    font-weight: 700
+
+  .tagline_subtext
+    text-align: center
+    margin: 5px 0 0 0
+    color: #2b323a
+    font-size: 16px
+    font-weight: 500
+
+  .slick-arrow
+    position: absolute
+    top: 53%
+    margin: 0 0 0 0
+    font-size: 0
+    width: 40px
+    height: 40px
+    background: none
+    border: none
+    outline: none
+    z-index: 1
+
+    &.slick-prev
+      left: 415px
+      background: url('../img/Travellers/arrow.jpg') 0 0 / 100% no-repeat
+
+    &.slick-next
+      right: 415px
+      background: url('../img/Travellers/arrow2.jpg') 0 0 / 100% no-repeat
+
+  .slick-dots
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: -130px auto
+
+    li
+      list-style: none
+      margin: 0 10px
+
+    button
+      font-size: 0
+      width: 50px
+      height: 3px
+      background-color: #d4daf5
+      border-radius: 0%
+      transition: .2s
+
+    .slick-active button
+      width: 70px
+      height: 4px
+      background-color: #3984f3
+
+
+.booking
+  position: relative
+  width: 100%
+  height: 600px
+  overflow: hidden
+
+  &:after
+    content: ""
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 0
+    /*background: linear-gradient(119deg, #4094ff 0%, #2eb0e8 100%)*/
+
+  img
+    width: 100%
+    height: 100%
+    filter: contrast(115%)
+    object-fit: cover
+    z-index: 1
+
+  .tagline
+    position: absolute
+    margin: -440px 0 0 562px
+    font-size: 25px
+    color: #fff
+    text-transform: uppercase
+    z-index: 1
+
+  .subtext
+    position: absolute
+    margin: -405px 0 0 390px
+    font-size: 45px
+    font-weight: 700
+    color: #fff
+    text-transform: capitalize
+    z-index: 3
+	 /*background: linear-gradient(119deg, #4094ff 0%, #2eb0e8 100%)*/
+
+.booking_settings
+  position: absolute
+  display: flex
+  margin: -290px 0 0 5px
+
+.booking .select
+  position: relative
+  margin: 0 0 0 50px
+  width: 270px
+  height: 50px
+  z-index: 3
+
+  .current
+    display: flex
+    align-items: center
+    width: 100%
+    height: 100%
+    background-color: #ffffff2e
+
+  .current_text
+    position: relative
+    top: 1px
+    left: 25px
+    font-size: 18px
+    font-weight: 300
+    color: #fff
+
+  .select_btn
+    position: absolute
+    top: 12px
+    left: 225px
+    cursor: pointer
+
+  .btn_up
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 5px 11px 5px
+    border-color: transparent transparent #ffffff transparent
+    background: none
+
+.btn_down
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 5px 11px 5px
+  border-color: transparent transparent #ffffff transparent
+  background: none
+
+.booking .select
+  .btn_up
+    position: absolute
+    top: 0
+    left: auto
+
+  .btn_down
+    position: absolute
+    top: 27px
+    left: 28px
+    border-width: 0 5px 11px 5px
+    transform-origin: -90% 0
+    transform: rotate(-180deg)
+
+  svg
+    top: 13px
+    left: 215px
+    fill: #fff
+
+  .dropdown
+    position: relative
+    display: none
+    width: 100%
+    font-size: 18px
+    font-weight: 500
+    color: #fff
+    line-height: 2
+    background-color: #ffffff2e
+    border-top: 1px solid #3984f3
+    transition: .1s
+
+  .variant
+    position: relative
+    height: 35px
+    left: 0px
+    cursor: pointer
+    transition: .1s
+
+    .variant_text
+      padding-left: 25px
+      z-index: 4
+
+    &:hover
+      background-color: #3984f35e
+
+  .calendar
+    cursor: pointer
+
+.date-picker
+  position: relative
+  display: block
+  width: 100%
+  max-width: 270px
+  background-color: #ffffff2e
+  cursor: pointer
+  user-select: none
+
+  .selected-date
+    display: none
+
+  .dates
+    display: block
+    top: 100%
+    left: 0
+    right: 0
+    color: #fff
+    background-color: #ffffff2e
+
+    .month
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-weight: 400
+      height: 37px
+
+      .mth
+        margin: 4px auto 0 auto
+        font-size: 17px
+
+      .btn_prev
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 5px 11px 5px
+        border-color: transparent transparent #ffffff transparent
+        background: none
+
+.btn_next
+  width: 0
+  height: 0
+  border-style: solid
+  border-width: 0 5px 11px 5px
+  border-color: transparent transparent #ffffff transparent
+  background: none
+
+.date-picker .dates
+  .month
+    .btn_prev
+      top: 9px
+      left: 20px
+      border-style: solid
+      border-width: 10px 20px 10px 0
+      border-color: transparent #fff transparent transparent
+
+    .btn_next
+      top: 9px
+      left: 230px
+      border-style: solid
+      border-width: 10px 20px 10px 21px
+      border-color: transparent transparent transparent #fff
+
+  .days
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    height: 200px
+
+    .day
+      display: flex
+      justify-content: center
+      align-items: center
+      color: #fff
+
+      &:hover
+        background-color: #3984f3
+
+.book_now
+  margin: 0 0 0 50px
+  width: 270px
+  height: 50px
+  font-size: 15px
+  z-index: 3
+
+
+footer
+  width: 100%
+  margin-top: 90px
+  padding-bottom: 80px
+
+.tags
+  width: 100%
+  margin: 0 auto
+  text-align: center
+
+  a
+    margin-right: 45px
+    font-size: 20px
+    font-weight: 600
+    color: #2b323a !important
+    text-decoration: none
+
+    &:last-child
+      margin-right: 0
+
+.copyright
+  margin-top: 45px
+  font-size: 17px
+  font-weight: 600
+  text-align: center
+
+  span
+    margin-left: 2px
+    color: #c6c6c6
+
+.media
+  margin-top: 30px
+  text-align: center
+
+  .media-item
+    width: 50px
+    height: 50px
+    margin-right: 20px
+    background-color: #3984f3
+    border-radius: 50px
+
+    &:last-child
+      margin-right: 0
+
+    svg
+      width: 25px
+      height: 25px
+      margin-top: 5px
+      fill: white
