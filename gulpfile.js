@@ -1,4 +1,4 @@
-let project_folder = require("path").basename(__dirname);
+let project_folder = 'build';
 let source_folder = "#src";
 
 let fs = require('fs');
@@ -51,7 +51,7 @@ let {src, dest} = require('gulp'),
 	 fonter = require("gulp-fonter");
 
 function browserSync(params) {
-	browsersync.init({
+	return browsersync.init({
 		server:{
 			baseDir: "./" + project_folder + "/"
 		},
@@ -167,7 +167,7 @@ gulp.task('svgSprite', function () {
 		.pipe(dest(path.build.img))
 })
 
-function fontsStyle(params) {
+async function fontsStyle(params) {
 	let file_content = fs.readFileSync(source_folder + '/sass/fonts.sass');
 
 	if (file_content == '') {
@@ -189,6 +189,7 @@ function fontsStyle(params) {
 			}
 		})
 	}
+	return 0
 }
 
 function cb() {
@@ -199,7 +200,7 @@ function watchFiles(params) {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
-	gulp.watch([path.watch.img], images);
+	return 	gulp.watch([path.watch.img], images);
 }
 
 function clean(params) {
@@ -207,7 +208,7 @@ function clean(params) {
 }
 
 let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
-let watch = gulp.parallel(build, watchFiles, browserSync);
+let watch = gulp.series(build, gulp.parallel(watchFiles,browserSync));
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
